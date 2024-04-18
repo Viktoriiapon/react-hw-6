@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 import css from "./ContactList.module.css";
 
-const ContactList = ({ onDeleteContact }) => {
+const ContactList = () => {
   const contacts = useSelector((state)=> state.contacts.contacts.items);
   const filter = useSelector((state) => state.filter.filters.name);
   const filteredContacts = contacts.filter((contact) =>
@@ -17,7 +17,7 @@ const ContactList = ({ onDeleteContact }) => {
         <Contact
           key={contact.id}
           contact={contact}
-          onDeleteContact={onDeleteContact}
+         
         />
       ))}
     </ul>
